@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | CyberShield</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { 
+            background: #0b0f19; 
+            color: #f8fafc; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            font-family: 'Inter', sans-serif;
+        }
+        .auth-card { 
+            background: #111827; 
+            padding: 40px; 
+            border-radius: 16px; 
+            border: 1px solid #1f2937; 
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        .form-control {
+            background-color: #0f172a;
+            border: 1px solid #334155;
+            color: white;
+        }
+        .form-control:focus {
+            background-color: #0f172a;
+            border-color: #3b82f6;
+            color: white;
+            box-shadow: 0 0 0 0.25 cereal rgba(59, 130, 246, 0.25);
+        }
+        .btn-register {
+            background-color: #3b82f6;
+            border: none;
+            padding: 12px;
+            font-weight: 600;
+        }
+        .btn-register:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-card">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold text-info">🛡️ CyberShield</h2>
+            <p class="text-secondary">Create your security researcher account</p>
+        </div>
+
+        <form method="POST">
+            <div class="mb-3">
+                <label class="form-label small text-secondary">Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Choose a username" required>
+            </div>
+            
+            <div class="mb-4">
+                <label class="form-label small text-secondary">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Create a strong password" required>
+            </div>
+
+            <button type="submit" class="btn btn-register btn-primary w-100 mb-3">Register Account</button>
+        </form>
+
+        <div class="text-center mt-3">
+            <p class="small text-secondary">Already have an account? <a href="/login" class="text-info text-decoration-none">Login instead</a></p>
+        </div>
+    </div>
+</body>
+</html>

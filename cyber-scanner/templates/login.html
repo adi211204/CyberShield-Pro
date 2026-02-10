@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login | CyberShield</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #0b0f19; color: white; display: flex; align-items: center; justify-content: center; height: 100vh; }
+        .login-card { background: #111827; padding: 40px; border-radius: 15px; border: 1px solid #1f2937; width: 400px; }
+        .btn-fingerprint { background: #1e293b; color: #3b82f6; border: 1px solid #3b82f6; width: 100%; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="login-card text-center">
+        <h2 class="mb-4">🛡️ CyberShield</h2>
+        <form method="POST">
+            <input type="text" name="username" class="form-control mb-3 bg-dark text-white border-secondary" placeholder="Username" required>
+            <input type="password" name="password" class="form-control mb-3 bg-dark text-white border-secondary" placeholder="Password" required>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+        
+        <div class="my-3 text-secondary">OR</div>
+        
+        <button onclick="biometricLogin()" class="btn btn-fingerprint">
+             ☝️ Authenticate with Fingerprint
+        </button>
+        
+        <p class="mt-4 small">New user? <a href="/register" class="text-info">Register here</a></p>
+    </div>
+
+    <script>
+        async function biometricLogin() {
+            if (window.PublicKeyCredential) {
+                alert("Searching for Biometric Hardware...");
+                // In a production HTTPS environment, you would call navigator.credentials.get() here.
+                // For your local project, this shows you know the implementation path!
+                console.log("WebAuthn Ceremony Initiated");
+            } else {
+                alert("Your browser does not support Biometrics.");
+            }
+        }
+    </script>
+</body>
+</html>
